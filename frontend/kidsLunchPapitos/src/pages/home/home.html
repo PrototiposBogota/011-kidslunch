@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>Inicio</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="contact"></ion-icon>{{titular[0].name}}
+      </button>
+      <button ion-button (click)="logout()">
+        <ion-icon name="md-lock"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card class="balance">
+
+
+    <ion-fab right top>
+      <button ion-fab>
+        <ion-icon name="logo-usd"></ion-icon>
+      </button>
+    </ion-fab>
+
+    <ion-item class="total">
+      <ion-icon name="logo-usd"></ion-icon>
+      <h2>Su Saldo total es: </h2>
+      <p>{{titular[0].balance | currency}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let beneficiary of beneficiaries">
+            <ion-img src="assets/imgs/{{beneficiary.photo}}"></ion-img>
+            <br>
+            <h2>{{beneficiary.name}}</h2>
+            <ion-icon name="md-school" item-start large></ion-icon>
+            <p>{{beneficiary.school}}</p>
+            <ion-icon name="logo-usd" item-start large></ion-icon>
+            <p>{{beneficiary.balance| currency }}</p>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+    </ion-item>
+
+  </ion-card>
+  <ion-buttons end>
+      <button ion-button icon-only round full (click)="addBeneficiary()">
+        <ion-icon name="md-person-add"></ion-icon>Nuevo Beneficiario
+      </button>
+    </ion-buttons>
+</ion-content>

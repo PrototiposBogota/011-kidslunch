@@ -1,0 +1,34 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title >Kids Lunch Papitos</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+
+
+<ion-content padding> 
+<ion-item>
+ <ion-img  src="assets/imgs/logo-2.png" ></ion-img>
+</ion-item>
+   
+  <ion-item>
+    <ion-label fixed><ion-icon name="md-contact"></ion-icon></ion-label>
+    <ion-input type="text" value="" placeholder="Usuario"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed><ion-icon name="md-unlock"></ion-icon></ion-label>
+    <ion-input type="password" placeholder="Contraseña"></ion-input>
+  </ion-item>
+  <br>
+  <button ion-button round full (click)="login()">Ingresar</button>
+  <br>
+  <button ion-button color="secondary" full round (click)="register()">Registrarse</button>
+
+</ion-content>
